@@ -1,6 +1,5 @@
 FROM debian:jessie
 
-
 MAINTAINER "Daniel McCoy" <danielmccoy@gmail.com>
 
 WORKDIR /tmp
