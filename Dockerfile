@@ -7,6 +7,7 @@ WORKDIR /tmp
 RUN apt-get update -y && \
     apt-get install -y \
     cron \
+    pdftk \
     php5-cli \
     php5-mcrypt \
     php5-mssql \
