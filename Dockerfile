@@ -1,27 +1,6 @@
-FROM debian:jessie
+FROM mightynerderic/alpine-nginx-phpfpm-pgsql:php7
 
-MAINTAINER "Daniel McCoy" <danielmccoy@gmail.com>
-
-WORKDIR /tmp
-
-RUN apt-get update -y && \
-    apt-get install -y \
-    cron \
-    pdftk \
-    php5-cli \
-    php5-mcrypt \
-    php5-mssql \
-    php5-mysqlnd \
-    php5-pgsql \
-    php5-redis \
-    php5-mongo \
-    php5-sqlite \
-    php5-dev make php-pear \
-    php5-gd && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-    #pecl install mongodb && \
-    #echo "extension=mongodb.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+MAINTAINER Eric Ball <eball@ccctechcenter.org>
 
 RUN mkdir -p /var/www
 VOLUME ["/var/www"]
