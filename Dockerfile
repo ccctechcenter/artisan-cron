@@ -1,6 +1,7 @@
-FROM mightynerderic/alpine-nginx-phpfpm-pgsql:php7
+# Get the latest ccc alpine image. Started getting latest when version 1.0.6 was build.
+FROM registry.ccctechcenter.org:5000/ccctechcenter/alpine-nginx-phpfpm-pgsql:1.0.6
 
-MAINTAINER Eric Ball <eball@ccctechcenter.org>
+MAINTAINER Emmett Culley <eculley@ccctechcenter.org>
 
 RUN mkdir -p /var/www
 VOLUME ["/var/www"]
