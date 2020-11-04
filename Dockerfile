@@ -2,7 +2,7 @@ FROM alpine:3.11
 
 MAINTAINER "Emmett Culley" <eculley@ccctechcenter.org>
 
-RUN apk --update --no-cache add crond
+RUN apk --update --no-cache add dcron
 
 
 RUN mkdir -p /var/www
