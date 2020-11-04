@@ -1,8 +1,9 @@
-# Get the latest ccc alpine image. Started getting latest when version 1.0.6 was build.
-#FROM registry.ccctechcenter.org:5000/ccctechcenter/alpine-nginx-phpfpm-pgsql:1.0.6
-FROM ccctechcenter/alpine-nginx-phpfpm-pgsql:1.0.6
+FROM alpine:3.11
 
-MAINTAINER Emmett Culley <eculley@ccctechcenter.org>
+MAINTAINER "Emmett Culley" <eculley@ccctechcenter.org>
+
+RUN apk --update --no-cache add cron
+
 
 RUN mkdir -p /var/www
 VOLUME ["/var/www"]
