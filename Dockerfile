@@ -4,7 +4,6 @@ MAINTAINER "Emmett Culley" <eculley@ccctechcenter.org>
 
 RUN apk --update --no-cache add dcron
 
-
 RUN mkdir -p /var/www
 VOLUME ["/var/www"]
 WORKDIR /var/www
@@ -19,4 +18,4 @@ RUN chmod 0644 /etc/cron.d/hello-cron
 RUN touch /var/log/cron.log
 
 # Run the command on container startup
-CMD cron && tail -f /var/log/cron.log
+CMD tail -f /var/log/cron.log
