@@ -1,4 +1,4 @@
-FROM alpine:3.18
+FROM alpine:3.19
 
 MAINTAINER "Emmett Culley" <eculley@ccctechcenter.org>
 
@@ -10,6 +10,8 @@ WORKDIR /var/www
 
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/hello-cron
+
+#RUN ln -s /usr/bin/php83 /usr/bin/php
 
 # Give execution rights on the cron job
 RUN chmod 0644 /etc/cron.d/hello-cron
