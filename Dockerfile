@@ -1,11 +1,11 @@
-FROM alpine:3.16
+FROM alpine:3.22.2
 
-MAINTAINER "Emmett Culley" <eculley@ccctechcenter.org>
+LABEL maintainer="Ken Van Mersbergen <kvanmersbergen@ccctechcenter.org>"
 
 RUN apk --update --no-cache add dcron
 
 RUN mkdir -p /var/www
-VOLUME ["/var/www"]
+VOLUME /var/www
 WORKDIR /var/www
 
 # Add crontab file in the cron directory
@@ -18,4 +18,4 @@ RUN chmod 0644 /etc/cron.d/hello-cron
 RUN touch /var/log/cron.log
 
 # Run the command on container startup
-CMD tail -f /var/log/cron.log
+CMD ["tail", "-f", "/var/log/cron.log"]
